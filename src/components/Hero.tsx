@@ -12,11 +12,11 @@ export const Hero = () => {
           className="text-left"
         >
           <h1 className="text-4xl md:text-6xl font-bold text-secondary-dark mb-6">
-            Lessons and insights
-            <span className="text-primary block mt-2">from 8 years</span>
+            Soft Glitch Solution
+            <span className="text-primary block mt-2">Innovation with Purpose</span>
           </h1>
           <p className="text-gray-600 text-lg mb-8">
-            Where to grow your business as a photographer: site or social media?
+          Developing cutting-edge, sustainable solutions that address critical challenges in the modern world.
           </p>
           <Button size="lg" className="bg-primary hover:bg-primary-dark">
             Register Now
