@@ -1,27 +1,38 @@
 import { motion } from "framer-motion";
+import { Button } from "./ui/button";
 
 export const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-secondary-dark relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/lovable-uploads/660a8d86-ae03-4137-ae45-d537a30ef4af.png')] opacity-10 bg-center bg-no-repeat bg-contain animate-float" />
-      <div className="container mx-auto px-4 text-center relative z-10">
+    <section className="min-h-[80vh] flex items-center justify-between bg-white relative overflow-hidden px-4 md:px-8 lg:px-16">
+      <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="text-left"
+        >
+          <h1 className="text-4xl md:text-6xl font-bold text-secondary-dark mb-6">
+            Lessons and insights
+            <span className="text-primary block mt-2">from 8 years</span>
+          </h1>
+          <p className="text-gray-600 text-lg mb-8">
+            Where to grow your business as a photographer: site or social media?
+          </p>
+          <Button size="lg" className="bg-primary hover:bg-primary-dark">
+            Register Now
+          </Button>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative"
         >
           <img
             src="/lovable-uploads/660a8d86-ae03-4137-ae45-d537a30ef4af.png"
-            alt="Soft Glitch Solutions Logo"
-            className="w-48 h-48 mx-auto mb-8 animate-glitch"
+            alt="Soft Glitch Solutions"
+            className="w-full max-w-md mx-auto animate-glitch"
           />
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-light mb-4">
-            Soft Glitch Solutions
-          </h1>
-          <p className="text-xl md:text-2xl text-green-400">
-            Innovation with Purpose
-          </p>
         </motion.div>
       </div>
     </section>
