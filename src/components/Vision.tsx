@@ -9,12 +9,12 @@ export const Vision = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold mb-8">Our Vision</h2>
-          <p className="text-xl max-w-3xl mx-auto leading-relaxed">
-            We envision a world where innovation fuels sustainable growth, fosters
-            inclusivity, and addresses global challenges. By combining cutting-edge
-            technology with a focus on real-world impact, we strive to inspire and
-            enable positive change.
+          <h2 className="text-4xl font-bold mb-8">Vision and Aspirations</h2>
+          <p className="text-xl max-w-3xl mx-auto leading-relaxed mb-8">
+            We envision a world where innovation fuels sustainable growth, fosters inclusivity, and addresses global challenges. By combining cutting-edge technology with a focus on real-world impact, we strive to inspire and enable positive change.
+          </p>
+          <p className="text-lg max-w-2xl mx-auto italic">
+            From creating tools to clean the planet to developing apps that simplify everyday life, Soft Glitch Solutions is redefining innovation—everywhere and for everyone.
           </p>
         </motion.div>
       </div>

@@ -31,7 +31,7 @@ export const Hero = () => {
           <img
             src="/lovable-uploads/660a8d86-ae03-4137-ae45-d537a30ef4af.png"
             alt="Soft Glitch Solutions"
-            className="w-full max-w-md mx-auto animate-glitch"
+            className="w-full max-w-md mx-auto transition-transform duration-300 hover:scale-110"
           />
         </motion.div>
       </div>
