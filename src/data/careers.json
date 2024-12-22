@@ -1,0 +1,38 @@
+{
+  "title": "Join Our Team",
+  "description": "Build the future with us",
+  "content": {
+    "intro": "At Soft Glitch Solutions, we're always looking for passionate individuals who want to make a difference.",
+    "culture": {
+      "heading": "Our Culture",
+      "description": "We foster an environment of innovation, collaboration, and continuous learning.",
+      "benefits": [
+        "Flexible working hours",
+        "Remote work options",
+        "Professional development",
+        "Health and wellness programs",
+        "Competitive compensation"
+      ]
+    },
+    "openings": [
+      {
+        "title": "Senior Software Engineer",
+        "department": "Engineering",
+        "location": "Remote",
+        "type": "Full-time"
+      },
+      {
+        "title": "UX/UI Designer",
+        "department": "Design",
+        "location": "Hybrid",
+        "type": "Full-time"
+      },
+      {
+        "title": "Product Manager",
+        "department": "Product",
+        "location": "On-site",
+        "type": "Full-time"
+      }
+    ]
+  }
+}

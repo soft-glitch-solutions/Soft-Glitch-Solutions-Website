@@ -1,0 +1,28 @@
+{
+  "title": "Contact Us",
+  "description": "Get in touch with our team",
+  "content": {
+    "offices": [
+      {
+        "name": "Headquarters",
+        "address": "123 Tech Street, Innovation City",
+        "email": "hello@softglitchsolutions.com",
+        "phone": "+1 (555) 123-4567"
+      }
+    ],
+    "departments": [
+      {
+        "name": "General Inquiries",
+        "email": "info@softglitchsolutions.com"
+      },
+      {
+        "name": "Technical Support",
+        "email": "support@softglitchsolutions.com"
+      },
+      {
+        "name": "Business Development",
+        "email": "business@softglitchsolutions.com"
+      }
+    ]
+  }
+}

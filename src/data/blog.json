@@ -1,0 +1,24 @@
+{
+  "title": "Blog",
+  "description": "Insights and Updates from Soft Glitch Solutions",
+  "posts": [
+    {
+      "id": 1,
+      "title": "The Future of Sustainable Technology",
+      "author": "John Doe",
+      "date": "2024-03-15",
+      "category": "Technology",
+      "content": "Exploring how sustainable technology is shaping our future...",
+      "tags": ["sustainability", "technology", "innovation"]
+    },
+    {
+      "id": 2,
+      "title": "Innovation in Gaming: Our Journey",
+      "author": "Jane Smith",
+      "date": "2024-03-10",
+      "category": "Gaming",
+      "content": "A deep dive into our gaming division's latest projects...",
+      "tags": ["gaming", "development", "technology"]
+    }
+  ]
+}

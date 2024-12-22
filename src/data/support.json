@@ -1,0 +1,28 @@
+{
+  "title": "Support",
+  "description": "We're here to help",
+  "content": {
+    "faq": [
+      {
+        "question": "How do I get started?",
+        "answer": "Follow our quick start guide in the documentation section..."
+      },
+      {
+        "question": "What support plans are available?",
+        "answer": "We offer various support plans tailored to your needs..."
+      }
+    ],
+    "supportChannels": [
+      {
+        "name": "Email Support",
+        "description": "24/7 email support for all customers",
+        "contact": "support@softglitchsolutions.com"
+      },
+      {
+        "name": "Live Chat",
+        "description": "Available during business hours",
+        "hours": "9 AM - 5 PM EST"
+      }
+    ]
+  }
+}

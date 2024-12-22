@@ -1,0 +1,37 @@
+{
+  "title": "About Soft Glitch Solutions",
+  "description": "Pioneering innovation with purpose",
+  "content": {
+    "intro": "Founded with a vision to create meaningful technological solutions, Soft Glitch Solutions has grown into a dynamic force in the tech industry.",
+    "story": "Our journey began with a simple idea: technology should solve real problems while being sustainable and accessible to all.",
+    "values": [
+      {
+        "title": "Innovation",
+        "description": "We constantly push boundaries and explore new possibilities."
+      },
+      {
+        "title": "Sustainability",
+        "description": "Environmental responsibility is at the core of everything we do."
+      },
+      {
+        "title": "Community",
+        "description": "We believe in the power of collective growth and shared success."
+      }
+    ],
+    "team": {
+      "heading": "Our Leadership",
+      "members": [
+        {
+          "name": "John Doe",
+          "position": "CEO & Founder",
+          "bio": "Visionary leader with 15+ years in sustainable tech solutions."
+        },
+        {
+          "name": "Jane Smith",
+          "position": "CTO",
+          "bio": "Technical innovator specializing in green technology."
+        }
+      ]
+    }
+  }
+}

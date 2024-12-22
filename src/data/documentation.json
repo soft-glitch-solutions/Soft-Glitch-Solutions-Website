@@ -1,0 +1,32 @@
+{
+  "title": "Documentation",
+  "description": "Technical resources and guides",
+  "content": {
+    "gettingStarted": {
+      "title": "Getting Started",
+      "sections": [
+        {
+          "title": "Installation",
+          "content": "Step-by-step guide to installing our solutions..."
+        },
+        {
+          "title": "Quick Start",
+          "content": "Basic setup and configuration steps..."
+        }
+      ]
+    },
+    "api": {
+      "title": "API Reference",
+      "sections": [
+        {
+          "title": "Authentication",
+          "content": "Learn about our authentication methods..."
+        },
+        {
+          "title": "Endpoints",
+          "content": "Detailed API endpoint documentation..."
+        }
+      ]
+    }
+  }
+}
