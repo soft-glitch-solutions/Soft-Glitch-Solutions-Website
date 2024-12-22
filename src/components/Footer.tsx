@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Github, FileText, Briefcase, Mail, Info, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const socialLinks = [
@@ -22,19 +23,22 @@ export const Footer = () => {
             <h4 className="text-lg font-semibold">Company</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <Link to="/about" className="hover:text-primary transition-colors flex items-center gap-2">
+                  <Info className="w-4 h-4" />
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <Link to="/careers" className="hover:text-primary transition-colors flex items-center gap-2">
+                  <Briefcase className="w-4 h-4" />
                   Careers
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <Link to="/contact" className="hover:text-primary transition-colors flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -42,19 +46,22 @@ export const Footer = () => {
             <h4 className="text-lg font-semibold">Resources</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <Link to="/blog" className="hover:text-primary transition-colors flex items-center gap-2">
+                  <FileText className="w-4 h-4" />
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <Link to="/documentation" className="hover:text-primary transition-colors flex items-center gap-2">
+                  <FileText className="w-4 h-4" />
                   Documentation
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <Link to="/support" className="hover:text-primary transition-colors flex items-center gap-2">
+                  <Phone className="w-4 h-4" />
                   Support
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
