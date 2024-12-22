@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import contactData from "../data/contact.json";
+import { Footer } from "../components/Footer";
 
 const Contact = () => {
   return (
@@ -60,6 +61,7 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

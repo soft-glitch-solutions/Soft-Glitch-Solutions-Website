@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import careersData from "../data/careers.json";
+import { Footer } from "../components/Footer";
 
 const Careers = () => {
   return (
@@ -76,6 +77,7 @@ const Careers = () => {
           </motion.div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

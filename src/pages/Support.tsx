@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import supportData from "../data/support.json";
+import { Footer } from "../components/Footer";
 
 const Support = () => {
   return (
@@ -71,6 +72,7 @@ const Support = () => {
           </motion.div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

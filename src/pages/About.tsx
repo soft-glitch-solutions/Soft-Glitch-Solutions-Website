@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import aboutData from "../data/about.json";
+import { Footer } from "../components/Footer";
 
 const About = () => {
   return (
@@ -66,6 +67,7 @@ const About = () => {
           </div>
         </motion.div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import blogData from "../data/blog.json";
+import { Footer } from "../components/Footer";
 
 const Blog = () => {
   return (
@@ -54,6 +55,7 @@ const Blog = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import docData from "../data/documentation.json";
+import { Footer } from "../components/Footer";
 
 const Documentation = () => {
   return (
@@ -58,6 +59,7 @@ const Documentation = () => {
           </motion.div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
