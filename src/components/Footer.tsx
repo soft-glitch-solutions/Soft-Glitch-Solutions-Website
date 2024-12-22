@@ -3,11 +3,11 @@ import { Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react";
 
 export const Footer = () => {
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Facebook, href: "https://www.facebook.com/SoftGlitchSolutions/", label: "Facebook" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Github, href: "#", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/soft-glitch-solutions/", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/soft-glitch-solutions", label: "GitHub" },
   ];
 
   return (
