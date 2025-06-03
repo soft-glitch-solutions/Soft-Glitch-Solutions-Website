@@ -1,8 +1,10 @@
+
 import { Hero } from "../components/Hero";
 import { Mission } from "../components/Mission";
 import { Portfolio } from "../components/Portfolio";
 import { Vision } from "../components/Vision";
 import { Business } from "../components/Business";
+import { WebsiteServicesSection } from "../components/WebsiteServicesSection";
 import { Footer } from "../components/Footer";
 
 const Index = () => {
@@ -12,6 +14,7 @@ const Index = () => {
       <Mission />
       <Portfolio />
       <Business />
+      <WebsiteServicesSection />
       <Vision />
       <Footer />
     </main>

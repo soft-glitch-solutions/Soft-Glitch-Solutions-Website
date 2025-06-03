@@ -1,5 +1,6 @@
+
 import { motion } from "framer-motion";
-import { Facebook, Twitter, Instagram, Linkedin, Github, FileText, Briefcase, Mail, Info, Phone } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Github, FileText, Briefcase, Mail, Info, Phone, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
@@ -43,8 +44,14 @@ export const Footer = () => {
             </ul>
           </div>
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Resources</h4>
+            <h4 className="text-lg font-semibold">Services</h4>
             <ul className="space-y-2">
+              <li>
+                <Link to="/website-services" className="hover:text-primary transition-colors flex items-center gap-2">
+                  <Globe className="w-4 h-4" />
+                  Website Services
+                </Link>
+              </li>
               <li>
                 <Link to="/blog" className="hover:text-primary transition-colors flex items-center gap-2">
                   <FileText className="w-4 h-4" />
