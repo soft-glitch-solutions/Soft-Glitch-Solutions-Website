@@ -1,6 +1,8 @@
+
 import { motion } from "framer-motion";
 import contactData from "../data/contact.json";
 import { Footer } from "../components/Footer";
+import { ContactForm } from "../components/ContactForm";
 
 const Contact = () => {
   return (
@@ -15,6 +17,15 @@ const Contact = () => {
             {contactData.title}
           </h1>
           <p className="text-xl text-gray-600">{contactData.description}</p>
+        </motion.div>
+
+        {/* Professional Website Services Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-16"
+        >
+          <ContactForm />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
