@@ -12,6 +12,10 @@ export const Footer = () => {
     { icon: Github, href: "https://github.com/soft-glitch-solutions", label: "GitHub" },
   ];
 
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-secondary-dark text-white py-12">
       <div className="container mx-auto px-4">
@@ -24,19 +28,19 @@ export const Footer = () => {
             <h4 className="text-lg font-semibold">Company</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/about" className="hover:text-primary transition-colors flex items-center gap-2">
+                <Link to="/about" onClick={handleLinkClick} className="hover:text-primary transition-colors flex items-center gap-2">
                   <Info className="w-4 h-4" />
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/careers" className="hover:text-primary transition-colors flex items-center gap-2">
+                <Link to="/careers" onClick={handleLinkClick} className="hover:text-primary transition-colors flex items-center gap-2">
                   <Briefcase className="w-4 h-4" />
                   Careers
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-primary transition-colors flex items-center gap-2">
+                <Link to="/contact" onClick={handleLinkClick} className="hover:text-primary transition-colors flex items-center gap-2">
                   <Mail className="w-4 h-4" />
                   Contact
                 </Link>
@@ -47,25 +51,25 @@ export const Footer = () => {
             <h4 className="text-lg font-semibold">Services</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/website-services" className="hover:text-primary transition-colors flex items-center gap-2">
+                <Link to="/website-services" onClick={handleLinkClick} className="hover:text-primary transition-colors flex items-center gap-2">
                   <Globe className="w-4 h-4" />
                   Website Services
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="hover:text-primary transition-colors flex items-center gap-2">
+                <Link to="/blog" onClick={handleLinkClick} className="hover:text-primary transition-colors flex items-center gap-2">
                   <FileText className="w-4 h-4" />
                   Blog
                 </Link>
               </li>
               <li>
-                <Link to="/documentation" className="hover:text-primary transition-colors flex items-center gap-2">
+                <Link to="/documentation" onClick={handleLinkClick} className="hover:text-primary transition-colors flex items-center gap-2">
                   <FileText className="w-4 h-4" />
                   Documentation
                 </Link>
               </li>
               <li>
-                <Link to="/support" className="hover:text-primary transition-colors flex items-center gap-2">
+                <Link to="/support" onClick={handleLinkClick} className="hover:text-primary transition-colors flex items-center gap-2">
                   <Phone className="w-4 h-4" />
                   Support
                 </Link>
