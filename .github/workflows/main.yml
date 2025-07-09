@@ -1,4 +1,4 @@
-name: Deploy via SFTP
+name: Deploy via FTP
 
 on:
   push:
@@ -24,12 +24,14 @@ jobs:
       - name: Build the app
         run: npm run build
 
-      - name: Deploy to cPanel via SFTP
-        uses: appleboy/scp-action@v0.1.4
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          host: ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}          # Typically 22 for SFTP
-          source: "dist/*"
-          target: "/public_html"
+          port: 21
+          protocol: ftp
+          local-dir: dist/
+          server-dir: /public_html/
+          dangerous-clean-slate: true  # clears old files
