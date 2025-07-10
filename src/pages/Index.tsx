@@ -6,6 +6,7 @@ import { Vision } from "../components/Vision";
 import { Business } from "../components/Business";
 import { WebsiteServicesSection } from "../components/WebsiteServicesSection";
 import { ConsultingSection } from "../components/ConsultingSection";
+import { HomeEnquiryForm } from "../components/HomeEnquiryForm";
 import { Footer } from "../components/Footer";
 
 const Index = () => {
@@ -14,10 +15,11 @@ const Index = () => {
       <Hero />
       <Mission />
       <Portfolio />
-      <Business />
       <WebsiteServicesSection />
       <ConsultingSection />
+      <Business />
       <Vision />
+      <HomeEnquiryForm />
       <Footer />
     </main>
   );
