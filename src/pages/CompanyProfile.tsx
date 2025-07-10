@@ -18,12 +18,13 @@ const CompanyProfile = () => {
         <!DOCTYPE html>
         <html>
           <head>
-            <title>Company Profile - ProTech Solutions</title>
+            <title>Company Profile - Soft Glitch Solutions</title>
             <style>
               @media print {
                 body { margin: 0; padding: 20px; font-family: Arial, sans-serif; }
                 .no-print { display: none !important; }
                 .page-break { page-break-before: always; }
+                .print-section { page-break-inside: avoid; }
               }
             </style>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
@@ -35,10 +36,11 @@ const CompanyProfile = () => {
                 const element = document.body;
                 const opt = {
                   margin: 0.5,
-                  filename: 'ProTech-Solutions-Company-Profile.pdf',
+                  filename: 'Soft-Glitch-Solutions-Company-Profile.pdf',
                   image: { type: 'jpeg', quality: 0.98 },
-                  html2canvas: { scale: 2 },
-                  jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                  html2canvas: { scale: 2, useCORS: true },
+                  jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+                  pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
                 };
                 html2pdf().set(opt).from(element).save().then(() => {
                   window.close();
@@ -53,25 +55,25 @@ const CompanyProfile = () => {
 
   const projects = [
     {
-      name: "E-Commerce Platform",
-      client: "RetailMax Ltd",
-      description: "Full-stack e-commerce solution with payment integration",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      name: "Smart Manufacturing Platform",
+      client: "TechManufacturing Inc",
+      description: "IoT-enabled manufacturing system with real-time monitoring and predictive maintenance",
+      technologies: ["React", "IoT Sensors", "Machine Learning", "Cloud Analytics"],
       year: "2024"
     },
     {
-      name: "Healthcare Management System",
-      client: "MediCare Group",
-      description: "Patient management and appointment scheduling system",
-      technologies: ["Vue.js", "Python", "PostgreSQL", "Docker"],
+      name: "AI-Powered Customer Service",
+      client: "ServicePro Group",
+      description: "Intelligent customer service automation with natural language processing",
+      technologies: ["Python", "TensorFlow", "NLP", "API Integration"],
+      year: "2024"
+    },
+    {
+      name: "Digital Supply Chain Solution",
+      client: "LogisticsPro",
+      description: "End-to-end supply chain digitization with blockchain tracking",
+      technologies: ["Blockchain", "React", "Node.js", "RFID Integration"],
       year: "2023"
-    },
-    {
-      name: "Financial Dashboard",
-      client: "InvestPro",
-      description: "Real-time financial data visualization and analytics",
-      technologies: ["React", "D3.js", "WebSocket", "Redis"],
-      year: "2024"
     }
   ];
 
@@ -86,29 +88,80 @@ const CompanyProfile = () => {
   return (
     <>
       <Helmet>
-        <title>Company Profile - ProTech Solutions</title>
-        <meta name="description" content="Comprehensive company profile for ProTech Solutions - Web Development & IT Consulting" />
+        <title>Company Profile - Soft Glitch Solutions</title>
+        <meta name="description" content="Comprehensive company profile for Soft Glitch Solutions - Innovation Company helping businesses build technology" />
         <style>
           {`
             @media print {
               body { margin: 0; padding: 0; }
               .no-print { display: none !important; }
-              .print-page { page-break-inside: avoid; }
+              .print-section { page-break-inside: avoid; }
               .page-break { page-break-before: always; }
               .company-profile-content { box-shadow: none !important; }
+            }
+            
+            .slide-in {
+              animation: slideIn 0.6s ease-out forwards;
+            }
+            
+            .fade-in {
+              animation: fadeIn 0.8s ease-out forwards;
+            }
+            
+            @keyframes slideIn {
+              from {
+                opacity: 0;
+                transform: translateX(-20px);
+              }
+              to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+            
+            @keyframes fadeIn {
+              from {
+                opacity: 0;
+                transform: translateY(20px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+            
+            .hover-lift {
+              transition: transform 0.3s ease;
+            }
+            
+            .hover-lift:hover {
+              transform: translateY(-5px);
             }
           `}
         </style>
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-b from-primary-light/5 to-white">
+      <div className="min-h-screen bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+        {/* Side Navigation Panel */}
+        <div className="no-print fixed left-4 top-1/2 transform -translate-y-1/2 z-40">
+          <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-2 space-y-2">
+            <a href="#overview" className="block p-2 text-xs hover:bg-primary/10 rounded transition-colors">Overview</a>
+            <a href="#about" className="block p-2 text-xs hover:bg-primary/10 rounded transition-colors">About</a>
+            <a href="#services" className="block p-2 text-xs hover:bg-primary/10 rounded transition-colors">Services</a>
+            <a href="#projects" className="block p-2 text-xs hover:bg-primary/10 rounded transition-colors">Projects</a>
+            <a href="#policies" className="block p-2 text-xs hover:bg-primary/10 rounded transition-colors">Policies</a>
+            <a href="#brand" className="block p-2 text-xs hover:bg-primary/10 rounded transition-colors">Brand</a>
+            <a href="#contact" className="block p-2 text-xs hover:bg-primary/10 rounded transition-colors">Contact</a>
+          </div>
+        </div>
+
         {/* Print/Download Controls */}
         <div className="no-print fixed top-4 right-4 z-50 flex gap-2">
-          <Button onClick={handlePrint} variant="outline" size="sm">
+          <Button onClick={handlePrint} variant="outline" size="sm" className="hover-lift">
             <Printer className="w-4 h-4 mr-2" />
             Print
           </Button>
-          <Button onClick={handleDownloadPDF} size="sm">
+          <Button onClick={handleDownloadPDF} size="sm" className="hover-lift">
             <Download className="w-4 h-4 mr-2" />
             Download PDF
           </Button>
@@ -116,71 +169,74 @@ const CompanyProfile = () => {
 
         <div className="company-profile-content max-w-4xl mx-auto p-8">
           {/* Cover Page */}
-          <div className="text-center mb-16 print-page">
+          <div id="overview" className="text-center mb-16 print-section fade-in">
             <div className="mb-8">
-              <h1 className="text-6xl font-bold text-primary mb-4">ProTech Solutions</h1>
-              <p className="text-2xl text-gray-600 mb-8">Web Development & IT Consulting</p>
-              <div className="w-32 h-1 bg-primary mx-auto"></div>
+              <h1 className="text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
+                Soft Glitch Solutions
+              </h1>
+              <p className="text-2xl text-gray-600 mb-8">Innovation Company</p>
+              <div className="w-32 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
             </div>
             
-            <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-8 hover-lift">
               <h2 className="text-3xl font-semibold mb-6 text-primary">Company Profile</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Transforming businesses through innovative technology solutions and expert consulting services.
-                We specialize in creating cutting-edge web applications and providing comprehensive IT support.
+                Empowering businesses to build technology that drives innovation and growth.
+                We specialize in helping companies integrate cutting-edge technology solutions into their operations.
               </p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-              <div className="bg-white p-4 rounded-lg shadow">
+              <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg hover-lift">
+                <div className="text-2xl font-bold text-primary">100+</div>
+                <div className="text-sm text-gray-600">Technology Solutions</div>
+              </div>
+              <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg hover-lift">
+                <div className="text-2xl font-bold text-primary">3+</div>
+                <div className="text-sm text-gray-600">Years Innovation</div>
+              </div>
+              <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg hover-lift">
                 <div className="text-2xl font-bold text-primary">50+</div>
-                <div className="text-sm text-gray-600">Projects Completed</div>
+                <div className="text-sm text-gray-600">Business Partners</div>
               </div>
-              <div className="bg-white p-4 rounded-lg shadow">
-                <div className="text-2xl font-bold text-primary">5+</div>
-                <div className="text-sm text-gray-600">Years Experience</div>
-              </div>
-              <div className="bg-white p-4 rounded-lg shadow">
-                <div className="text-2xl font-bold text-primary">30+</div>
-                <div className="text-sm text-gray-600">Happy Clients</div>
-              </div>
-              <div className="bg-white p-4 rounded-lg shadow">
+              <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg hover-lift">
                 <div className="text-2xl font-bold text-primary">24/7</div>
-                <div className="text-sm text-gray-600">Support</div>
+                <div className="text-sm text-gray-600">Innovation Support</div>
               </div>
             </div>
           </div>
 
           {/* Company Overview */}
-          <div className="page-break">
-            <Card className="mb-8">
+          <div id="about" className="page-break">
+            <Card className="mb-8 bg-white/80 backdrop-blur-sm shadow-xl border-0 slide-in">
               <CardHeader>
-                <CardTitle className="text-3xl text-primary">About ProTech Solutions</CardTitle>
+                <CardTitle className="text-3xl text-primary">About Soft Glitch Solutions</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Our Mission</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    To empower businesses with innovative technology solutions that drive growth, 
-                    efficiency, and digital transformation. We are committed to delivering exceptional 
-                    value through cutting-edge web development and strategic IT consulting.
+                    To revolutionize how businesses integrate technology into their operations, creating 
+                    innovative solutions that transform ideas into powerful digital realities. We bridge 
+                    the gap between business vision and technological implementation.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Our Vision</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    To be the leading technology partner for businesses seeking digital excellence, 
-                    recognized for our innovation, reliability, and commitment to client success.
+                    To be the premier innovation partner for businesses ready to embrace the future, 
+                    recognized for our ability to seamlessly blend cutting-edge technology with practical 
+                    business solutions.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Our Values</h3>
                   <ul className="text-gray-700 space-y-2">
-                    <li>• <strong>Innovation:</strong> Embracing new technologies and creative solutions</li>
-                    <li>• <strong>Quality:</strong> Delivering excellence in every project</li>
-                    <li>• <strong>Reliability:</strong> Building trust through consistent performance</li>
-                    <li>• <strong>Collaboration:</strong> Working closely with clients as partners</li>
-                    <li>• <strong>Growth:</strong> Continuously learning and evolving</li>
+                    <li>• <strong>Innovation:</strong> Pioneering next-generation technology solutions</li>
+                    <li>• <strong>Partnership:</strong> Building lasting relationships with our clients</li>
+                    <li>• <strong>Excellence:</strong> Delivering superior technology integration</li>
+                    <li>• <strong>Adaptability:</strong> Evolving with emerging technologies</li>
+                    <li>• <strong>Impact:</strong> Creating meaningful business transformation</li>
                   </ul>
                 </div>
               </CardContent>
@@ -188,31 +244,31 @@ const CompanyProfile = () => {
           </div>
 
           {/* Services */}
-          <div className="page-break">
-            <Card className="mb-8">
+          <div id="services" className="page-break">
+            <Card className="mb-8 bg-white/80 backdrop-blur-sm shadow-xl border-0 slide-in">
               <CardHeader>
-                <CardTitle className="text-3xl text-primary">Our Services</CardTitle>
+                <CardTitle className="text-3xl text-primary">Innovation Services</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-gradient-to-br from-primary/5 to-primary/10 p-6 rounded-lg">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">Web Development</h3>
+                  <div className="bg-gradient-to-br from-primary/10 to-primary/20 p-6 rounded-xl hover-lift">
+                    <h3 className="text-xl font-semibold mb-3 text-primary">Technology Integration</h3>
                     <ul className="space-y-2 text-gray-700">
-                      <li>• Custom Web Applications</li>
-                      <li>• E-commerce Solutions</li>
-                      <li>• Progressive Web Apps (PWA)</li>
+                      <li>• Custom Technology Solutions</li>
+                      <li>• Business Process Automation</li>
+                      <li>• Cloud Infrastructure Setup</li>
                       <li>• API Development & Integration</li>
-                      <li>• Database Design & Management</li>
+                      <li>• Digital Workflow Optimization</li>
                     </ul>
                   </div>
-                  <div className="bg-gradient-to-br from-secondary/5 to-secondary/10 p-6 rounded-lg">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">IT Consulting</h3>
+                  <div className="bg-gradient-to-br from-accent/10 to-accent/20 p-6 rounded-xl hover-lift">
+                    <h3 className="text-xl font-semibold mb-3 text-primary">Innovation Consulting</h3>
                     <ul className="space-y-2 text-gray-700">
-                      <li>• Technology Strategy Planning</li>
-                      <li>• System Architecture Design</li>
-                      <li>• Digital Transformation</li>
-                      <li>• Performance Optimization</li>
-                      <li>• Security Assessment</li>
+                      <li>• Technology Strategy Development</li>
+                      <li>• Digital Transformation Planning</li>
+                      <li>• Innovation Roadmap Creation</li>
+                      <li>• Tech Stack Modernization</li>
+                      <li>• Scalability Assessment</li>
                     </ul>
                   </div>
                 </div>
@@ -221,10 +277,10 @@ const CompanyProfile = () => {
           </div>
 
           {/* Featured Projects */}
-          <div className="page-break">
-            <Card className="mb-8">
+          <div id="projects" className="page-break">
+            <Card className="mb-8 bg-white/80 backdrop-blur-sm shadow-xl border-0 slide-in">
               <CardHeader>
-                <CardTitle className="text-3xl text-primary">Featured Projects</CardTitle>
+                <CardTitle className="text-3xl text-primary">Innovation Projects</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-6">
@@ -254,10 +310,10 @@ const CompanyProfile = () => {
           </div>
 
           {/* Company Policies */}
-          <div className="page-break">
-            <Card className="mb-8">
+          <div id="policies" className="page-break">
+            <Card className="mb-8 bg-white/80 backdrop-blur-sm shadow-xl border-0 slide-in">
               <CardHeader>
-                <CardTitle className="text-3xl text-primary">Company Guidelines & Policies</CardTitle>
+                <CardTitle className="text-3xl text-primary">Innovation Guidelines & Policies</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
@@ -303,16 +359,18 @@ const CompanyProfile = () => {
           </div>
 
           {/* Brand Guidelines */}
-          <div className="page-break">
-            <Card className="mb-8">
+          <div id="brand" className="page-break">
+            <Card className="mb-8 bg-white/80 backdrop-blur-sm shadow-xl border-0 slide-in">
               <CardHeader>
                 <CardTitle className="text-3xl text-primary">Brand Guidelines</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
                   <h3 className="text-xl font-semibold mb-4">Logo Usage</h3>
-                  <div className="bg-gray-50 p-6 rounded-lg mb-4">
-                    <div className="text-4xl font-bold text-primary mb-2">ProTech Solutions</div>
+                  <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-xl mb-4">
+                    <div className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
+                      Soft Glitch Solutions
+                    </div>
                     <p className="text-sm text-gray-600">Primary Logo</p>
                   </div>
                   <ul className="text-gray-700 space-y-1">
@@ -377,7 +435,7 @@ const CompanyProfile = () => {
                         <p className="font-medium">🚀 New Project Launch!</p>
                         <p className="mt-2">We're excited to share our latest [PROJECT TYPE] for [CLIENT NAME]!</p>
                         <p className="mt-2">✨ Key Features:<br/>• [Feature 1]<br/>• [Feature 2]<br/>• [Feature 3]</p>
-                        <p className="mt-2">#WebDevelopment #[Technology] #ProTechSolutions</p>
+                        <p className="mt-2">#Innovation #[Technology] #SoftGlitchSolutions</p>
                       </div>
                     </div>
 
@@ -410,8 +468,8 @@ const CompanyProfile = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="page-break">
-            <Card className="mb-8">
+          <div id="contact" className="page-break">
+            <Card className="mb-8 bg-white/80 backdrop-blur-sm shadow-xl border-0 slide-in">
               <CardHeader>
                 <CardTitle className="text-3xl text-primary">Contact Information</CardTitle>
               </CardHeader>
@@ -422,7 +480,7 @@ const CompanyProfile = () => {
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
                         <Mail className="w-5 h-5 text-primary" />
-                        <span>info@protechsolutions.com</span>
+                        <span>info@softglitchsolutions.com</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <Phone className="w-5 h-5 text-primary" />
@@ -430,11 +488,11 @@ const CompanyProfile = () => {
                       </div>
                       <div className="flex items-center gap-3">
                         <Globe className="w-5 h-5 text-primary" />
-                        <span>www.protechsolutions.com</span>
+                        <span>www.softglitchsolutions.com</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <MapPin className="w-5 h-5 text-primary" />
-                        <span>123 Tech Street, Innovation City, TC 12345</span>
+                        <span>123 Innovation Drive, Tech Valley, TV 12345</span>
                       </div>
                     </div>
                   </div>
@@ -454,9 +512,9 @@ const CompanyProfile = () => {
                         <span>Sunday:</span>
                         <span>Closed</span>
                       </div>
-                      <div className="mt-4 p-3 bg-primary/10 rounded">
+                      <div className="mt-4 p-3 bg-primary/10 rounded-xl">
                         <p className="text-sm text-primary font-medium">
-                          Emergency support available 24/7 for critical issues
+                          Innovation support available 24/7 for urgent technology needs
                         </p>
                       </div>
                     </div>
@@ -467,9 +525,9 @@ const CompanyProfile = () => {
           </div>
 
           {/* Footer */}
-          <div className="text-center py-8 border-t">
+          <div className="text-center py-8 border-t print-section">
             <p className="text-gray-600">
-              © 2024 ProTech Solutions. All rights reserved. | Transforming businesses through technology.
+              © 2024 Soft Glitch Solutions. All rights reserved. | Empowering businesses through innovation.
             </p>
           </div>
         </div>
