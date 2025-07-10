@@ -1,4 +1,4 @@
-name: Deploy via FTP
+name: Deploy via SFTP
 
 on:
   push:
@@ -24,13 +24,13 @@ jobs:
       - name: Build the app
         run: npm run build
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          protocol: ftp
-          local-dir: dist/
-          server-dir: /public_html/
+          server: ${{ secrets.FTP_SERVER }}    # Same secret name (but now for SFTP)
+          username: ${{ secrets.FTP_USERNAME }} # Same secret name
+          password: ${{ secrets.FTP_PASSWORD }} # Same secret name
+          port: 22                             # Default SFTP port (change if needed)
+          local-path: "dist/*"                 # Files to deploy
+          remote-path: "/public_html/"         # Target directory
+          delete-remote-files: true            # Equivalent to dangerous-clean-slate
