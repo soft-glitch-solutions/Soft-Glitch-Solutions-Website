@@ -1,4 +1,4 @@
-ame: Deploy via FTP
+name: Deploy via FTP
 
 on:
   push:
@@ -34,4 +34,3 @@ jobs:
           protocol: ftp
           local-dir: dist/
           server-dir: /public_html/
-          dangerous-clean-slate: true  # clears old files
