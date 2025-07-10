@@ -1,9 +1,9 @@
-name: Deploy via FTP
+name: Deploy via SFTP
 
 on:
   push:
     branches:
-      - main  # Deploy when pushing to the main branch
+      - main
 
 jobs:
   deploy:
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Updated from 16 to 20 to match required engines
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
@@ -24,13 +24,13 @@ jobs:
       - name: Build the app
         run: npm run build
 
-      - name: Deploy to cPanel via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
-          port: ${{ secrets.FTP_PORT }}
-          local-dir: dist/  # This is your build directory
-          server-dir: /public_html/  # Change this if needed
+          server: 102.212.247.186  # Your host (without sftp:// prefix)
+          username: dywsdjdc       # Your username
+          password: a6(TrN29Sd#S  # Store password securely
+          port: 1624              # Your custom port
+          local-path: "dist/*"    # Files to deploy
+          remote-path: "/public_html/"  # Target directory
+          delete-remote-files: true      # Clears old files
