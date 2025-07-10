@@ -1,4 +1,5 @@
 
+import Navigation from "../components/Navigation";
 import { Hero } from "../components/Hero";
 import { Mission } from "../components/Mission";
 import { Portfolio } from "../components/Portfolio";
@@ -12,15 +13,18 @@ import { Footer } from "../components/Footer";
 const Index = () => {
   return (
     <main className="min-h-screen">
-      <Hero />
-      <Mission />
-      <Portfolio />
-      <WebsiteServicesSection />
-      <ConsultingSection />
-      <Business />
-      <Vision />
-      <HomeEnquiryForm />
-      <Footer />
+      <Navigation />
+      <div className="pt-16"> {/* Add padding to account for fixed nav */}
+        <Hero />
+        <Mission />
+        <Portfolio />
+        <WebsiteServicesSection />
+        <ConsultingSection />
+        <Business />
+        <Vision />
+        <HomeEnquiryForm />
+        <Footer />
+      </div>
     </main>
   );
 };
