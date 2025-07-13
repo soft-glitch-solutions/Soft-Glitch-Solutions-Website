@@ -96,7 +96,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-300">
-          <p>© 2024 Soft Glitch Solutions. All rights reserved.</p>
+          <p>© 2025 Soft Glitch Solutions. All rights reserved.</p>
         </div>
       </div>
     </footer>
