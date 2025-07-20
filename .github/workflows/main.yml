@@ -25,13 +25,13 @@ jobs:
         run: npm run build
 
       - name: Deploy to cPanel via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: pressidium/lftp-deploy@v1.0.1
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: sftp
           port: ${{ secrets.FTP_PORT }}
+          protocol: sftp
           local-dir: dist/  # This is your build directory
-          server-dir: /mobile.uthutho.co.za/  # Change this if needed
+          remote-path: "/public_html/"  # Change this if needed
           cleanup: true  # Remove old files before uploading
