@@ -3,7 +3,7 @@ name: Deploy via FTP
 on:
   push:
     branches:
-      - main  # Deploy when pushing to the main branch
+      - main  # Deploy when pushing to main branch
 
 jobs:
   deploy:
@@ -24,15 +24,15 @@ jobs:
       - name: Build the app
         run: npm run build
 
-      - name: Deploy to cPanel via FTP (Debug Enabled)
-        uses: milanmk/actions-file-deployer@master
+      - name: Deploy to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
         with:
-          remote-protocol: ftp
-          remote-host: ${{ secrets.FTP_SERVER }}
-          remote-port: ${{ secrets.FTP_PORT }}
-          remote-user: ${{ secrets.FTP_USERNAME }}
-          remote-password: ${{ secrets.FTP_PASSWORD }}
-          local-path: dist/
-          remote-path: /public_html/
-          sync: full
-          debug: 'true'  # ✅ Enable verbose logging for troubleshooting
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}  # optional, default is 21
+          local-dir: ./dist
+          server-dir: /public_html
+          protocol: ftp
+          dry-run: false
+          debug: true  # <-- enables verbose logging for debugging
