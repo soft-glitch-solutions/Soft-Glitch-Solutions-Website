@@ -31,8 +31,8 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}  # optional, default is 21
-          local-dir: ./dist
-          server-dir: /public_html
+          local-dir: ./dist/
+          server-dir: /public_html/
           protocol: ftp
           dry-run: false
           debug: true  # <-- enables verbose logging for debugging
