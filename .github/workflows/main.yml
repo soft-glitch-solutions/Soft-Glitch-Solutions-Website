@@ -25,13 +25,14 @@ jobs:
         run: npm run build
 
       - name: Deploy to cPanel via FTP
-        uses: pressidium/lftp-deploy@v1.0.1
+        uses: milanmk/actions-file-deployer@master
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
+          remote-server: ${{ secrets.FTP_SERVER }}
+          remote-username: ${{ secrets.FTP_USERNAME }}
+          remote-password: ${{ secrets.FTP_PASSWORD }}
+          remote-port: ${{ secrets.FTP_PORT }}
           protocol: sftp
           local-dir: dist/  # This is your build directory
           remote-path: "/public_html/"  # Change this if needed
-          cleanup: true  # Remove old files before uploading
+          sync: full  # or "delta" after initial deploy
+          delete: 'true'  # clean remote files first
