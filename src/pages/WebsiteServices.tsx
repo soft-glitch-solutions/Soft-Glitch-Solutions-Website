@@ -8,15 +8,13 @@ const WebsiteServices = () => {
   const packages = [
     {
       name: "Basic Web Package",
-      price: "R2,500 – R4,500",
+      price: "R2,500 – R3,500",
       subtitle: "Once-off",
       features: [
         "Up to 5 pages (Home, About, Services, Contact, etc.)",
         "Mobile-responsive design",
         "Basic SEO setup",
-        "Contact form integration",
-        "1-year free .co.za domain registration",
-        "1-year free hosting"
+        "Contact form integration"
       ]
     },
     {
@@ -28,9 +26,7 @@ const WebsiteServices = () => {
         "Custom design elements",
         "Blog or news section",
         "Enhanced SEO optimization",
-        "Social media integration",
-        "1-year free .co.za domain registration",
-        "1-year free hosting"
+        "Social media integration"
       ]
     },
     {
@@ -43,9 +39,7 @@ const WebsiteServices = () => {
         "Payment gateway integration (e.g., PayFast, PayGate)",
         "Inventory management system",
         "Enhanced SEO optimization",
-        "Social media integration",
-        "1-year free .co.za domain registration",
-        "1-year free hosting"
+        "Social media integration"
       ]
     }
   ];
@@ -53,7 +47,7 @@ const WebsiteServices = () => {
   const maintenancePlans = [
     {
       name: "Basic Maintenance Plan",
-      price: "R500/month",
+      price: "R199/month",
       features: [
         "Monthly software updates",
         "Security monitoring",

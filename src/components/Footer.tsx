@@ -1,12 +1,12 @@
 
 import { motion } from "framer-motion";
-import { Facebook, Twitter, Instagram, Linkedin, Github, FileText, Briefcase, Mail, Info, Phone, Globe } from "lucide-react";
+import { Facebook, TikTok, Instagram, Linkedin, Github, FileText, Briefcase, Mail, Info, Phone, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const socialLinks = [
     { icon: Facebook, href: "https://www.facebook.com/SoftGlitchSolutions/", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: TikTok, href: "#", label: "Twitter" },
     { icon: Instagram, href: "#", label: "Instagram" },
     { icon: Linkedin, href: "https://www.linkedin.com/company/soft-glitch-solutions/", label: "LinkedIn" },
     { icon: Github, href: "https://github.com/soft-glitch-solutions", label: "GitHub" },
