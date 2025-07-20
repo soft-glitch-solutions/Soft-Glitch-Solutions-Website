@@ -30,7 +30,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
+          protocol: sftp
           port: ${{ secrets.FTP_PORT }}
           local-dir: dist/  # This is your build directory
           server-dir: /mobile.uthutho.co.za/  # Change this if needed
