@@ -1,4 +1,4 @@
-name: Deploy via FTP
+name: Deploy via SFTP
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # ✅ Upgrade to Node.js 18+ for ReadableStream support
+          node-version: '18'  # ✅ Node.js 18+ for modern features
 
       - name: Install dependencies
         run: npm install
@@ -24,15 +24,14 @@ jobs:
       - name: Build the app
         run: npm run build
 
-      - name: Deploy to cPanel via FTP
+      - name: Deploy to cPanel via SFTP
         uses: milanmk/actions-file-deployer@master
         with:
-          remote-server: ${{ secrets.FTP_SERVER }}
-          remote-username: ${{ secrets.FTP_USERNAME }}
+          remote-protocol: sftp
+          remote-host: ${{ secrets.FTP_SERVER }}
+          remote-port: 22
+          remote-user: ${{ secrets.FTP_USERNAME }}
           remote-password: ${{ secrets.FTP_PASSWORD }}
-          remote-port: ${{ secrets.FTP_PORT }}
-          protocol: sftp
-          local-dir: dist/  # This is your build directory
-          remote-path: "/public_html/"  # Change this if needed
-          sync: full  # or "delta" after initial deploy
-          delete: 'true'  # clean remote files first
+          local-path: dist/                 # ✅ Correct key
+          remote-path: /public_html/        # ✅ Correct key
+          sync: full                        # "full" uploads everything
