@@ -1,9 +1,9 @@
-name: Deploy via SFTP
+name: Deploy via FTP
 
 on:
   push:
     branches:
-      - main
+      - main  # Deploy when pushing to the main branch
 
 jobs:
   deploy:
@@ -16,21 +16,24 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '18'  # ✅ Upgrade to Node.js 18+ for ReadableStream support
 
       - name: Install dependencies
         run: npm install
 
       - name: Build the app
-        run: npm run build
+        run: |
+          npm install undici@5.22.1 --save-exact  # ✅ Downgrade undici if needed
+          npx expo export -p web
 
-      - name: Deploy via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.0
+      - name: Deploy to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: 102.212.247.186  # Your host (without sftp:// prefix)
-          username: dywsdjdc       # Your username
-          password: a6(TrN29Sd#S  # Store password securely
-          port: 1624              # Your custom port
-          local-path: "dist/*"    # Files to deploy
-          remote-path: "/public_html/"  # Target directory
-          delete-remote-files: true      # Clears old files
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          port: ${{ secrets.FTP_PORT }}
+          local-dir: dist/  # This is your build directory
+          server-dir: /mobile.uthutho.co.za/  # Change this if needed
+          cleanup: true  # Remove old files before uploading
