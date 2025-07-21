@@ -33,4 +33,5 @@ jobs:
           REMOTE_PORT: ${{ secrets.FTP_PORT || 22 }}
           SOURCE: "dist/"
           TARGET: "/public_html/"
-          ARGS: "-avzr --delete"
+          ARGS: "-avzr --delete --rsync-path='rsync'"
+
