@@ -24,7 +24,7 @@ jobs:
       - name: Build the app
         run: npm run build
 
-      - name: Deploy to cPanel via SFTP
+      - name: Deploy to cPanel via SFTP (no rsync)
         uses: easingthemes/ssh-deploy@v2.1.5
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SFTP_SSH_KEY }}
@@ -33,5 +33,6 @@ jobs:
           REMOTE_PORT: ${{ secrets.FTP_PORT || 22 }}
           SOURCE: "dist/"
           TARGET: "/public_html/"
-          ARGS: "-avzr --delete --rsync-path='rsync'"
+          ARGS: "-avzr --delete"
+          RSYNC: false  # ✅ This disables rsync and uses scp instead
 
