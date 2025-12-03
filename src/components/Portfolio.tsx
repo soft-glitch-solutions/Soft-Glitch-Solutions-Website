@@ -19,7 +19,7 @@ export const Portfolio = () => {
       icon: "👶",
     },
     {
-      name: "Uthotho Maps",
+      name: "Uthotho",
       description: "A sustainable navigation system promoting eco-friendly travel and local tourism. Reduces carbon footprints while supporting regional businesses.",
       icon: "🗺️",
     },
