@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
+import crechespotsLogo from "@/assets/crechespots-logo.png";
+import uthuthoLogo from "@/assets/uthutho-logo.png";
 
 export const Portfolio = () => {
   const innovations = [
     {
-      name: "Refloat",
-      description: "A sustainable tool that transforms discarded tires into skimmers for cleaning rivers and oceans. Combats marine pollution while promoting upcycling and community engagement.",
-      icon: "🌊",
+      name: "Recoza",
+      description: "An open-source, South African green-tech mobile application designed to help unemployed youth earn income by organising community recycling through trusted networks of friends, family, and neighbours.",
+      icon: "♻️",
     },
     {
       name: "Commiploy",
@@ -16,12 +18,14 @@ export const Portfolio = () => {
     {
       name: "Crechespots",
       description: "A user-friendly app helping parents find reliable creches and daycare centers. Enhances childcare accessibility and fosters trust in local childcare services.",
-      icon: "👶",
+      logo: crechespotsLogo,
+      link: "https://crechespots.co.za",
     },
     {
-      name: "Uthotho",
+      name: "Uthutho",
       description: "A sustainable navigation system promoting eco-friendly travel and local tourism. Reduces carbon footprints while supporting regional businesses.",
-      icon: "🗺️",
+      logo: uthuthoLogo,
+      link: "https://uthutho.co.za",
     },
   ];
 
@@ -47,12 +51,21 @@ export const Portfolio = () => {
               <Card className="h-full hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <span className="text-4xl mr-4">{innovation.icon}</span>
+                    {innovation.logo ? (
+                      <img src={innovation.logo} alt={innovation.name} className="w-12 h-12 mr-4 object-contain" />
+                    ) : (
+                      <span className="text-4xl mr-4">{innovation.icon}</span>
+                    )}
                     <h3 className="text-2xl font-semibold text-secondary-dark">
                       {innovation.name}
                     </h3>
                   </div>
-                  <p className="text-gray-600">{innovation.description}</p>
+                  <p className="text-muted-foreground">{innovation.description}</p>
+                  {innovation.link && (
+                    <a href={innovation.link} target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-primary hover:underline text-sm font-medium">
+                      Visit {innovation.name} →
+                    </a>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>
